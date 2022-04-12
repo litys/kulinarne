@@ -1,0 +1,87 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+body {
+  background-color: #f6f6f6;
+}
+
+.hero-baner {
+  &__slider--product {
+    height: 350px;
+  }
+  &--product {
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -30%;
+      height: 100%;
+      background-image: url('../svg/wave-hero-product.svg');
+      background-size: cover;
+    }
+  }
+}
+
+.product {
+  max-width: 750px;
+  margin: -225px auto 0;
+  border-radius: 15px;
+  border: 2px solid #777;
+  z-index: 20;
+  position: relative;
+  background-color: #fff;
+  padding: 25px;
+  &__image {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+    border-radius: 15px;
+    @include mobile {
+      object-fit: contain;
+      height: auto;
+      max-height: 275px;
+    }
+  }
+  &__header {
+    letter-spacing: 0.01rem;
+    font-size: 2rem;
+    font-style: italic;
+    margin: 25px 0 5px;
+    text-transform: capitalize;
+  }
+  &__category {
+    margin: 0px 15px 15px 0;
+    padding: 5px 25px;
+    display: inline-block;
+    border-radius: 5px;
+    text-transform: capitalize;
+    &--soup {
+      background-color: $soup_color;
+      box-shadow: 0px 0px 18px 0px
+        rgba(red($soup_color), green($soup_color), blue($soup_color), 0.8);
+    }
+    &--desserts {
+      background-color: $desserts_color;
+      box-shadow: 0px 0px 18px 0px
+        rgba(red($desserts_color), green($desserts_color), blue($desserts_color), 0.8);
+    }
+    &--meat {
+      background-color: $meat_color;
+      box-shadow: 0px 0px 18px 0px
+        rgba(red($meat_color), green($meat_color), blue($meat_color), 0.8);
+    }
+  }
+  &__text {
+    font-size: 1.05rem;
+    line-height: 1.6rem;
+    text-indent: 2rem;
+  }
+}
+
+.footer-product {
+  &__copyright {
+    text-align: center;
+    padding: 25px 0;
+  }
+}
